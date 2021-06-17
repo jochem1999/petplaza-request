@@ -2,16 +2,16 @@ package fontys.fhict.request.entity;
 
 import fontys.fhict.request.dto.Requestdto;
 import lombok.Data;
+import org.springframework.context.annotation.Primary;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
 public class Request {
 
     @Id
+    @GeneratedValue
     private long requestId;
     @Column
     private long breederId;
@@ -34,4 +34,9 @@ public class Request {
         this.email = requestDto.getEmailValue();
         this.topic = requestDto.getTopicValue();
     }
+
+    public Request(){
+
+    }
+
 }
