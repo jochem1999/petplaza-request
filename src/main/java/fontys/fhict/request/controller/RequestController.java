@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 @RestController
@@ -34,8 +35,7 @@ public class RequestController {
     }
 
     @GetMapping("/getAllBy/{id}")
-    public ResponseEntity<ArrayList<Request>> getAllRequestsbyId(@PathVariable String id){
-        System.out.println(id);
-        return ResponseEntity.ok(requestService.findAllByBreederId(Long.parseLong(id)));
+    public ResponseEntity<ArrayList<Request>> getAllRequestsbyId(@PathVariable long id){
+        return ResponseEntity.ok(requestService.findAllByBreederId(id));
     }
 }

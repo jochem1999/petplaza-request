@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.ArrayList;
 
 public interface RequestRepository extends JpaRepository<Request, Long> {
-    ArrayList<Request> findAllByBreederId(long id);
+    ArrayList<Request> findAllBybreederId(long id);
 }

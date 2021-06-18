@@ -18,7 +18,7 @@ public class RequestService {
     }
 
     public ArrayList<Request> findAllByBreederId(long id){
-        return requestRepository.findAllByBreederId(id);
+        return requestRepository.findAllBybreederId(id);
     }
 
 }
